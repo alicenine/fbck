@@ -184,8 +184,8 @@ async def supported_media(message: Message):
         await message.answer("К сожалению, автор бота решил тебя заблокировать, сообщения не будут доставлены. Лох.")
     elif message.from_user.id in shadowbanned:
         return
-    elif check_member.status not in ["member", "creator"]:
-        return await message.reply(f"<b>Перед тем как написать мне, подпишитесь на канал и ждите аппрува</b>", parse_mode="HTML", reply_markup=builderz.as_markup())
+    #elif check_member.status not in ["member", "creator"]:
+       # return await message.reply(f"<b>Перед тем как написать мне, подпишитесь на канал и ждите аппрува</b>", parse_mode="HTML", reply_markup=builderz.as_markup())
     else:
         await message.copy_to(
             config.admin_chat_id,
