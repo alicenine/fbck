@@ -74,8 +74,7 @@ async def cmd_help(message: Message):
     builder.row(InlineKeyboardButton(
         text="Тебе сюда", url="https://t.me/siniy_kit8")
     )
-    await message.answer(
-        "0011010")
+    await message.answer(f"<b>•••− • •−• − •−− •− </b>", parse_mode="HTML", reply_markup=builder.as_markup())
     
     
     
