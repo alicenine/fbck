@@ -62,8 +62,8 @@ async def cmd_sendall(message: Message):
 
 
 
-#@router.message(Command(commands=["help"]))
-#async def cmd_help(message: Message):
+@router.message(Command(commands=["help"]))
+async def cmd_help(message: Message):
     """
     Справка для пользователя
 
@@ -72,14 +72,10 @@ async def cmd_sendall(message: Message):
    
     builder = InlineKeyboardBuilder()
     builder.row(InlineKeyboardButton(
-        text="🕋 Владелец", url="https://t.me/ansdamn")
-    )
-    builder.row(InlineKeyboardButton(
-        text="⛩ Вебсайт",
-        url="https://yourmom.tk")
+        text="Тебе сюда", url="https://t.me/siniy_kit8")
     )
     await message.answer(
-        "За спам прописываю в ебало")
+        "0011010")
     
     
     
