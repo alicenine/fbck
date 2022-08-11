@@ -170,7 +170,7 @@ async def supported_media(message: Message):
     builderz.row(InlineKeyboardButton(
         text="🫂 Вступить", url="https://t.me/+Tr4jNXkJUjoxNDhl")
     )
-    #check_member = await bot.get_chat_member(-1001565513038, message.from_user.id)
+    check_member = await bot.get_chat_member(-1001641980120, message.from_user.id)
 
     if message.caption and len(message.caption) > 1000:
         return await message.reply("К сожалению, длина подписи медиафайла превышает допустимый размер. "
