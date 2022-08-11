@@ -41,10 +41,10 @@ async def cmd_start(message: Message):
         if not db.user_exists(message.from_user.id):
             db.add_user(message.from_user.id)
         await message.answer(
-            'Напиши "я в игре". Назад пути нет.')
+            'Напиши "Разбуди меня в 4:20"')
 
 
-@router.message(Command(commands=["sendall"]), F.reply_to_message, F.chat.type == 'private', F.from_user.id == 5181800215)
+@router.message(Command(commands=["sendall"]), F.reply_to_message, F.chat.type == 'private', F.from_user.id == 5482430403)
 async def cmd_sendall(message: Message):
     text = message.reply_to_message
     users = db.get_users()
@@ -72,7 +72,7 @@ async def cmd_help(message: Message):
    
     builder = InlineKeyboardBuilder()
     builder.row(InlineKeyboardButton(
-        text="Тебе сюда", url="https://t.me/siniy_kit8")
+        text="Тебе сюда", url="https://t.me/+P787yntICHhlNzli")
     )
     await message.answer(f"<b>•••− • •−• − •−− •− </b>", parse_mode="HTML", reply_markup=builder.as_markup())
     
@@ -135,7 +135,7 @@ async def text_message(message: Message, bot: Bot):
         return await message.reply("К сожалению, длина этого сообщения превышает допустимый размер. "
                                    "Пожалуйста, сократи свою мысль и попробуй ещё раз.")
     
-    #check_member = await bot.get_chat_member(-1001565513038, message.from_user.id)
+    check_member = await bot.get_chat_member(-1001641980120, message.from_user.id)
    
         
 
@@ -143,8 +143,8 @@ async def text_message(message: Message, bot: Bot):
         await message.answer("К сожалению, автор бота решил тебя заблокировать, сообщения не будут доставлены. Лох.")
     elif message.from_user.id in shadowbanned:
         return
-    # elif check_member.status not in ["member", "creator"]:
-        # return await message.reply(f"<b>Перед тем как написать, вступите и ждите аппрува</b>", parse_mode="HTML", reply_markup=builderz.as_markup())
+    elif check_member.status not in ["member", "creator"]:
+        return await message.reply(f"<b>Перед тем как написать, вступи. И не забывай, что назад пути не будет.</b>", parse_mode="HTML", reply_markup=builderz.as_markup())
     else:
         await bot.send_message(
             config.admin_chat_id,
@@ -179,8 +179,8 @@ async def supported_media(message: Message):
         await message.answer("К сожалению, автор бота решил тебя заблокировать, сообщения не будут доставлены. Лох.")
     elif message.from_user.id in shadowbanned:
         return
-    #elif check_member.status not in ["member", "creator"]:
-       # return await message.reply(f"<b>Перед тем как написать мне, подпишитесь на канал и ждите аппрува</b>", parse_mode="HTML", reply_markup=builderz.as_markup())
+    elif check_member.status not in ["member", "creator"]:
+       return await message.reply(f"<b>Перед тем как написать мне, вступи. И не забывай, что назад пути не будет.</b>", parse_mode="HTML", reply_markup=builderz.as_markup())
     else:
         await message.copy_to(
             config.admin_chat_id,
