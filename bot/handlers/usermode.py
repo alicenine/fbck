@@ -41,7 +41,7 @@ async def cmd_start(message: Message):
         if not db.user_exists(message.from_user.id):
             db.add_user(message.from_user.id)
         await message.answer(
-            'Напиши "Разбуди меня в 4:20"')
+            'Напиши "Я в игре"')
 
 
 @router.message(Command(commands=["sendall"]), F.reply_to_message, F.chat.type == 'private', F.from_user.id == 5482430403)
@@ -135,7 +135,7 @@ async def text_message(message: Message, bot: Bot):
         return await message.reply("К сожалению, длина этого сообщения превышает допустимый размер. "
                                    "Пожалуйста, сократи свою мысль и попробуй ещё раз.")
     
-    check_member = await bot.get_chat_member(-1001641980120, message.from_user.id)
+    check_member = await bot.get_chat_member(-1001660187319, message.from_user.id)
    
         
 
@@ -170,7 +170,7 @@ async def supported_media(message: Message):
     builderz.row(InlineKeyboardButton(
         text="🫂 Вступить", url="https://t.me/+Tr4jNXkJUjoxNDhl")
     )
-    check_member = await bot.get_chat_member(-1001641980120, message.from_user.id)
+    check_member = await bot.get_chat_member(-1001660187319, message.from_user.id)
 
     if message.caption and len(message.caption) > 1000:
         return await message.reply("К сожалению, длина подписи медиафайла превышает допустимый размер. "
