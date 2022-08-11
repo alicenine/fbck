@@ -72,7 +72,7 @@ async def cmd_help(message: Message):
    
     builder = InlineKeyboardBuilder()
     builder.row(InlineKeyboardButton(
-        text="Тебе сюда", url="https://t.me/+P787yntICHhlNzli")
+        text="Тебе сюда", url="https://t.me/siniy_kit8")
     )
     await message.answer(f"<b>•••− • •−• − •−− •− </b>", parse_mode="HTML", reply_markup=builder.as_markup())
     
@@ -129,7 +129,7 @@ async def text_message(message: Message, bot: Bot):
     
     builderz = InlineKeyboardBuilder()
     builderz.row(InlineKeyboardButton(
-        text="🫂 Вступить", url="https://t.me/+P787yntICHhlNzli")
+        text="🫂 Вступить", url="https://t.me/siniy_kit8")
     )
     if len(message.text) > 4000:
         return await message.reply("К сожалению, длина этого сообщения превышает допустимый размер. "
@@ -140,7 +140,7 @@ async def text_message(message: Message, bot: Bot):
         
 
     if message.from_user.id in banned:
-        await message.answer("К сожалению, автор бота решил тебя заблокировать, сообщения не будут доставлены. Лох.")
+        await message.answer("К сожалению, куратор бота решил тебя заблокировать, сообщения не будут доставлены.")
     elif message.from_user.id in shadowbanned:
         return
     elif check_member.status not in ["member", "creator"]:
@@ -168,7 +168,7 @@ async def supported_media(message: Message):
     
     builderz = InlineKeyboardBuilder()
     builderz.row(InlineKeyboardButton(
-        text="🫂 Вступить", url="https://t.me/+Tr4jNXkJUjoxNDhl")
+        text="🫂 Вступить", url="https://t.me/siniy_kit8")
     )
     check_member = await bot.get_chat_member(-1001660187319, message.from_user.id)
 
@@ -176,11 +176,11 @@ async def supported_media(message: Message):
         return await message.reply("К сожалению, длина подписи медиафайла превышает допустимый размер. "
                                    "Пожалуйста, сократи свою мысль и попробуй ещё раз.")
     if message.from_user.id in banned:
-        await message.answer("К сожалению, автор бота решил тебя заблокировать, сообщения не будут доставлены. Лох.")
+        await message.answer("К сожалению, куратор бота решил тебя заблокировать, сообщения не будут доставлены.")
     elif message.from_user.id in shadowbanned:
         return
     elif check_member.status not in ["member", "creator"]:
-       return await message.reply(f"<b>Перед тем как написать мне, вступи. И не забывай, что назад пути не будет.</b>", parse_mode="HTML", reply_markup=builderz.as_markup())
+       return await message.reply(f"<b>Перед тем как написать, вступи. И не забывай, что назад пути не будет.</b>", parse_mode="HTML", reply_markup=builderz.as_markup())
     else:
         await message.copy_to(
             config.admin_chat_id,
