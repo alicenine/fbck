@@ -72,7 +72,7 @@ async def cmd_help(message: Message):
    
     builder = InlineKeyboardBuilder()
     builder.row(InlineKeyboardButton(
-        text="Тебе сюда", url="https://t.me/siniy_kit8")
+        text="Тебе сюда", url="https://t.me/+sF17u6V6F6FkZWVi")
     )
     await message.answer(f"<b>•••− • •−• − •−− •− </b>", parse_mode="HTML", reply_markup=builder.as_markup())
     
@@ -129,13 +129,13 @@ async def text_message(message: Message, bot: Bot):
     
     builderz = InlineKeyboardBuilder()
     builderz.row(InlineKeyboardButton(
-        text="🫂 Вступить", url="https://t.me/siniy_kit8")
+        text="🫂 Вступить", url="https://t.me/+sF17u6V6F6FkZWVi")
     )
     if len(message.text) > 4000:
         return await message.reply("К сожалению, длина этого сообщения превышает допустимый размер. "
                                    "Пожалуйста, сократи свою мысль и попробуй ещё раз.")
     
-    check_member = await bot.get_chat_member(-1001660187319, message.from_user.id)
+    check_member = await bot.get_chat_member(-1002016797095, message.from_user.id)
    
         
 
@@ -168,9 +168,9 @@ async def supported_media(message: Message):
     
     builderz = InlineKeyboardBuilder()
     builderz.row(InlineKeyboardButton(
-        text="🫂 Вступить", url="https://t.me/siniy_kit8")
+        text="🫂 Вступить", url="https://t.me/+sF17u6V6F6FkZWVi")
     )
-    check_member = await bot.get_chat_member(-1001660187319, message.from_user.id)
+    check_member = await bot.get_chat_member(-1002016797095, message.from_user.id)
 
     if message.caption and len(message.caption) > 1000:
         return await message.reply("К сожалению, длина подписи медиафайла превышает допустимый размер. "
